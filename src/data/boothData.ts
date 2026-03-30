@@ -83,144 +83,44 @@ export const villages: Village[] = [
   { name: "வீரிருப்பு", boothCount: 0, lat: 9.19, lng: 77.44, booths: [] },
 ];
 
-// 20-day route plan - covering all villages multiple times with focus on booth-heavy villages
+// 4-day route plan - all villages covered grouped by geography for efficient travel
+// Day 1: Central cluster (திருவேட்டநல்லூர் + nearby)
+// Day 2: South cluster (தெற்கு புதூர் + அருணாசலபுரம் + பெரியசாமியாபுரம்)
+// Day 3: West cluster (பாம்பு கோவில் + KV முத்துசாமியாபுரம் + வீரசிகாமணி zone)
+// Day 4: North cluster (குடம்புக்குளம் + வடமலாபுரம் + நொச்சிக்குளம் zone)
 export const routePlan: RouteDay[] = [
   { day: 1, stops: [
     { order: 1, village: "திருவேட்டநல்லூர்", distance: 0, lat: 9.235, lng: 77.395 },
     { order: 2, village: "கீழ திருவேட்டநல்லூர்", distance: 0.5, lat: 9.232, lng: 77.398 },
     { order: 3, village: "வெற்றம்பட்டி", distance: 0.9, lat: 9.228, lng: 77.405 },
-    { order: 4, village: "அரியநாயகிபுரம்", distance: 1, lat: 9.22, lng: 77.41 },
-    { order: 5, village: "அருணாசலபுரம்", distance: 0.8, lat: 9.215, lng: 77.415 },
-    { order: 6, village: "அச்சம்பட்டி", distance: 0.8, lat: 9.21, lng: 77.42 },
-    { order: 7, village: "பெரியசாமியாபுரம்", distance: 0.8, lat: 9.205, lng: 77.425 },
-    { order: 8, village: "வடக்கு புதூர்", distance: 0.4, lat: 9.203, lng: 77.428 },
+    { order: 4, village: "அரியநாயகிபுரம்", distance: 1.0, lat: 9.22, lng: 77.41 },
+    { order: 5, village: "அச்சம்பட்டி", distance: 0.8, lat: 9.21, lng: 77.42 },
+    { order: 6, village: "வடக்கு புதூர்", distance: 2.5, lat: 9.203, lng: 77.428 },
   ]},
   { day: 2, stops: [
     { order: 1, village: "தெற்கு புதூர்", distance: 0, lat: 9.2, lng: 77.43 },
     { order: 2, village: "எருமன் குளம்", distance: 0.8, lat: 9.195, lng: 77.435 },
     { order: 3, village: "வீரிருப்பு", distance: 0.8, lat: 9.19, lng: 77.44 },
-    { order: 4, village: "கே.வி. முத்துசாமியாபுரம்", distance: 7.5, lat: 9.23, lng: 77.385 },
-    { order: 5, village: "பாம்பு கோவில்", distance: 1.2, lat: 9.24, lng: 77.39 },
-    { order: 6, village: "புனைவனம்", distance: 0.8, lat: 9.245, lng: 77.385 },
-    { order: 7, village: "பாரைக்குளம்", distance: 0.8, lat: 9.25, lng: 77.38 },
-    { order: 8, village: "வடநத்தம்பட்டி", distance: 0.8, lat: 9.255, lng: 77.375 },
+    { order: 4, village: "பெரியசாமியாபுரம்", distance: 3.0, lat: 9.205, lng: 77.425 },
+    { order: 5, village: "அருணாசலபுரம்", distance: 1.5, lat: 9.215, lng: 77.415 },
   ]},
   { day: 3, stops: [
-    { order: 1, village: "கீழ வீரசிகாமணி", distance: 0, lat: 9.258, lng: 77.372 },
-    { order: 2, village: "வீரசிகாமணி", distance: 0.3, lat: 9.26, lng: 77.37 },
-    { order: 3, village: "கே.வி. ஆலங்குளம்", distance: 0.8, lat: 9.265, lng: 77.365 },
-    { order: 4, village: "வடக்கு ஆலங்குளம்", distance: 0.4, lat: 9.268, lng: 77.363 },
-    { order: 5, village: "குடம்புக்குளம்", distance: 0.4, lat: 9.27, lng: 77.36 },
-    { order: 6, village: "பொய்கை மேடு", distance: 0.8, lat: 9.275, lng: 77.355 },
-    { order: 7, village: "வடமலாபுரம்", distance: 0.8, lat: 9.28, lng: 77.35 },
-    { order: 8, village: "நொச்சிக்குளம்", distance: 0.8, lat: 9.285, lng: 77.345 },
-  ]},
-  { day: 4, stops: [
-    { order: 1, village: "திருவேட்டநல்லூர்", distance: 0, lat: 9.235, lng: 77.395 },
-    { order: 2, village: "பாம்பு கோவில்", distance: 1.2, lat: 9.24, lng: 77.39 },
-    { order: 3, village: "அருணாசலபுரம்", distance: 3.5, lat: 9.215, lng: 77.415 },
-    { order: 4, village: "தெற்கு புதூர்", distance: 2.0, lat: 9.2, lng: 77.43 },
-  ]},
-  { day: 5, stops: [
-    { order: 1, village: "பெரியசாமியாபுரம்", distance: 0, lat: 9.205, lng: 77.425 },
-    { order: 2, village: "அச்சம்பட்டி", distance: 0.8, lat: 9.21, lng: 77.42 },
-    { order: 3, village: "அரியநாயகிபுரம்", distance: 1.0, lat: 9.22, lng: 77.41 },
-    { order: 4, village: "கே.வி. முத்துசாமியாபுரம்", distance: 3.0, lat: 9.23, lng: 77.385 },
-    { order: 5, village: "குடம்புக்குளம்", distance: 4.5, lat: 9.27, lng: 77.36 },
-  ]},
-  { day: 6, stops: [
-    { order: 1, village: "வடமலாபுரம்", distance: 0, lat: 9.28, lng: 77.35 },
-    { order: 2, village: "நொச்சிக்குளம்", distance: 0.8, lat: 9.285, lng: 77.345 },
-    { order: 3, village: "பொய்கை மேடு", distance: 1.5, lat: 9.275, lng: 77.355 },
-    { order: 4, village: "வடக்கு ஆலங்குளம்", distance: 1.0, lat: 9.268, lng: 77.363 },
-    { order: 5, village: "கே.வி. ஆலங்குளம்", distance: 0.4, lat: 9.265, lng: 77.365 },
-  ]},
-  { day: 7, stops: [
-    { order: 1, village: "வீரசிகாமணி", distance: 0, lat: 9.26, lng: 77.37 },
-    { order: 2, village: "கீழ வீரசிகாமணி", distance: 0.3, lat: 9.258, lng: 77.372 },
-    { order: 3, village: "வடநத்தம்பட்டி", distance: 0.5, lat: 9.255, lng: 77.375 },
-    { order: 4, village: "பாரைக்குளம்", distance: 0.8, lat: 9.25, lng: 77.38 },
-    { order: 5, village: "புனைவனம்", distance: 0.8, lat: 9.245, lng: 77.385 },
-  ]},
-  { day: 8, stops: [
-    { order: 1, village: "திருவேட்டநல்லூர்", distance: 0, lat: 9.235, lng: 77.395 },
-    { order: 2, village: "கீழ திருவேட்டநல்லூர்", distance: 0.5, lat: 9.232, lng: 77.398 },
-    { order: 3, village: "வெற்றம்பட்டி", distance: 0.9, lat: 9.228, lng: 77.405 },
-    { order: 4, village: "பாம்பு கோவில்", distance: 2.0, lat: 9.24, lng: 77.39 },
-  ]},
-  { day: 9, stops: [
-    { order: 1, village: "அருணாசலபுரம்", distance: 0, lat: 9.215, lng: 77.415 },
-    { order: 2, village: "அரியநாயகிபுரம்", distance: 0.8, lat: 9.22, lng: 77.41 },
-    { order: 3, village: "வடக்கு புதூர்", distance: 2.5, lat: 9.203, lng: 77.428 },
-    { order: 4, village: "தெற்கு புதூர்", distance: 0.4, lat: 9.2, lng: 77.43 },
-    { order: 5, village: "எருமன் குளம்", distance: 0.8, lat: 9.195, lng: 77.435 },
-  ]},
-  { day: 10, stops: [
-    { order: 1, village: "வீரிருப்பு", distance: 0, lat: 9.19, lng: 77.44 },
-    { order: 2, village: "பெரியசாமியாபுரம்", distance: 3.0, lat: 9.205, lng: 77.425 },
-    { order: 3, village: "அச்சம்பட்டி", distance: 0.8, lat: 9.21, lng: 77.42 },
-    { order: 4, village: "கே.வி. முத்துசாமியாபுரம்", distance: 4.0, lat: 9.23, lng: 77.385 },
-  ]},
-  { day: 11, stops: [
-    { order: 1, village: "பாம்பு கோவில்", distance: 0, lat: 9.24, lng: 77.39 },
-    { order: 2, village: "திருவேட்டநல்லூர்", distance: 1.2, lat: 9.235, lng: 77.395 },
-    { order: 3, village: "அருணாசலபுரம்", distance: 3.0, lat: 9.215, lng: 77.415 },
-  ]},
-  { day: 12, stops: [
-    { order: 1, village: "குடம்புக்குளம்", distance: 0, lat: 9.27, lng: 77.36 },
-    { order: 2, village: "வடமலாபுரம்", distance: 0.8, lat: 9.28, lng: 77.35 },
-    { order: 3, village: "பொய்கை மேடு", distance: 0.8, lat: 9.275, lng: 77.355 },
-    { order: 4, village: "வடக்கு ஆலங்குளம்", distance: 1.0, lat: 9.268, lng: 77.363 },
-  ]},
-  { day: 13, stops: [
-    { order: 1, village: "தெற்கு புதூர்", distance: 0, lat: 9.2, lng: 77.43 },
-    { order: 2, village: "வடக்கு புதூர்", distance: 0.4, lat: 9.203, lng: 77.428 },
-    { order: 3, village: "பெரியசாமியாபுரம்", distance: 0.5, lat: 9.205, lng: 77.425 },
-    { order: 4, village: "அருணாசலபுரம்", distance: 1.5, lat: 9.215, lng: 77.415 },
-  ]},
-  { day: 14, stops: [
-    { order: 1, village: "திருவேட்டநல்லூர்", distance: 0, lat: 9.235, lng: 77.395 },
+    { order: 1, village: "கே.வி. முத்துசாமியாபுரம்", distance: 0, lat: 9.23, lng: 77.385 },
     { order: 2, village: "பாம்பு கோவில்", distance: 1.2, lat: 9.24, lng: 77.39 },
     { order: 3, village: "புனைவனம்", distance: 0.8, lat: 9.245, lng: 77.385 },
-    { order: 4, village: "வீரசிகாமணி", distance: 2.0, lat: 9.26, lng: 77.37 },
-  ]},
-  { day: 15, stops: [
-    { order: 1, village: "கே.வி. ஆலங்குளம்", distance: 0, lat: 9.265, lng: 77.365 },
-    { order: 2, village: "கீழ வீரசிகாமணி", distance: 1.0, lat: 9.258, lng: 77.372 },
-    { order: 3, village: "வடநத்தம்பட்டி", distance: 0.5, lat: 9.255, lng: 77.375 },
     { order: 4, village: "பாரைக்குளம்", distance: 0.8, lat: 9.25, lng: 77.38 },
+    { order: 5, village: "வடநத்தம்பட்டி", distance: 0.8, lat: 9.255, lng: 77.375 },
+    { order: 6, village: "கீழ வீரசிகாமணி", distance: 0.4, lat: 9.258, lng: 77.372 },
+    { order: 7, village: "வீரசிகாமணி", distance: 0.3, lat: 9.26, lng: 77.37 },
   ]},
-  { day: 16, stops: [
-    { order: 1, village: "எருமன் குளம்", distance: 0, lat: 9.195, lng: 77.435 },
-    { order: 2, village: "வீரிருப்பு", distance: 0.8, lat: 9.19, lng: 77.44 },
-    { order: 3, village: "தெற்கு புதூர்", distance: 3.5, lat: 9.2, lng: 77.43 },
-    { order: 4, village: "அச்சம்பட்டி", distance: 1.5, lat: 9.21, lng: 77.42 },
-  ]},
-  { day: 17, stops: [
-    { order: 1, village: "அருணாசலபுரம்", distance: 0, lat: 9.215, lng: 77.415 },
-    { order: 2, village: "திருவேட்டநல்லூர்", distance: 3.0, lat: 9.235, lng: 77.395 },
-    { order: 3, village: "கே.வி. முத்துசாமியாபுரம்", distance: 1.5, lat: 9.23, lng: 77.385 },
-    { order: 4, village: "பாம்பு கோவில்", distance: 1.2, lat: 9.24, lng: 77.39 },
-  ]},
-  { day: 18, stops: [
-    { order: 1, village: "குடம்புக்குளம்", distance: 0, lat: 9.27, lng: 77.36 },
-    { order: 2, village: "நொச்சிக்குளம்", distance: 2.0, lat: 9.285, lng: 77.345 },
-    { order: 3, village: "வடமலாபுரம்", distance: 0.8, lat: 9.28, lng: 77.35 },
+  { day: 4, stops: [
+    { order: 1, village: "கே.வி. ஆலங்குளம்", distance: 0, lat: 9.265, lng: 77.365 },
+    { order: 2, village: "வடக்கு ஆலங்குளம்", distance: 0.4, lat: 9.268, lng: 77.363 },
+    { order: 3, village: "குடம்புக்குளம்", distance: 0.4, lat: 9.27, lng: 77.36 },
     { order: 4, village: "பொய்கை மேடு", distance: 0.8, lat: 9.275, lng: 77.355 },
-  ]},
-  { day: 19, stops: [
-    { order: 1, village: "பெரியசாமியாபுரம்", distance: 0, lat: 9.205, lng: 77.425 },
-    { order: 2, village: "வடக்கு புதூர்", distance: 0.4, lat: 9.203, lng: 77.428 },
-    { order: 3, village: "அரியநாயகிபுரம்", distance: 2.5, lat: 9.22, lng: 77.41 },
-    { order: 4, village: "வெற்றம்பட்டி", distance: 1.0, lat: 9.228, lng: 77.405 },
-    { order: 5, village: "கீழ திருவேட்டநல்லூர்", distance: 0.5, lat: 9.232, lng: 77.398 },
-  ]},
-  { day: 20, stops: [
-    { order: 1, village: "திருவேட்டநல்லூர்", distance: 0, lat: 9.235, lng: 77.395 },
-    { order: 2, village: "பாம்பு கோவில்", distance: 1.2, lat: 9.24, lng: 77.39 },
-    { order: 3, village: "அருணாசலபுரம்", distance: 3.5, lat: 9.215, lng: 77.415 },
-    { order: 4, village: "தெற்கு புதூர்", distance: 2.0, lat: 9.2, lng: 77.43 },
-    { order: 5, village: "குடம்புக்குளம்", distance: 8.0, lat: 9.27, lng: 77.36 },
-    { order: 6, village: "வடமலாபுரம்", distance: 0.8, lat: 9.28, lng: 77.35 },
+    { order: 5, village: "வடமலாபுரம்", distance: 0.8, lat: 9.28, lng: 77.35 },
+    { order: 6, village: "நொச்சிக்குளம்", distance: 0.8, lat: 9.285, lng: 77.345 },
   ]},
 ];
+
+
