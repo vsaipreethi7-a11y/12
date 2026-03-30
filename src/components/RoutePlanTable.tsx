@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { routePlan } from "@/data/boothData";
-import { ChevronDown, ChevronRight, MapPin, ExternalLink } from "lucide-react";
+import { ChevronDown, ChevronRight, MapPin, ExternalLink, Download } from "lucide-react";
 
 interface RoutePlanTableProps {
   onDaySelect: (day: number) => void;
@@ -16,18 +16,35 @@ const RoutePlanTable = ({ onDaySelect, selectedDay }: RoutePlanTableProps) => {
     else next.add(day);
     setExpandedDays(next);
   };
+  const handlePrint = () => {
+    // Expand all panels before printing
+    setExpandedDays(new Set(routePlan.map((d) => d.day)));
+    // Delay slightly to let React render the open panels
+    setTimeout(() => {
+      window.print();
+    }, 150);
+  };
 
   return (
     <div className="bg-card rounded-lg shadow-card overflow-hidden border border-border">
-      <div className="p-4 border-b border-border gradient-hero">
-        <h3 className="text-lg font-bold text-primary-foreground">
-          📅 4 நாள் பயண திட்டம்
-        </h3>
-        <p className="text-sm text-primary-foreground/70 mt-1">
-          கிராமம் மீது கிளிக் செய்து வரைபடத்தில் பாருங்கள்
-        </p>
+      <div className="p-4 border-b border-border gradient-hero flex justify-between items-start">
+        <div>
+          <h3 className="text-lg font-bold text-primary-foreground flex items-center gap-2">
+            📅 4 நாள் பயண திட்டம்
+          </h3>
+          <p className="text-sm text-primary-foreground/70 mt-1 print:hidden">
+            கிராமம் மீது கிளிக் செய்து வரைபடத்தில் பாருங்கள்
+          </p>
+        </div>
+        <button
+          onClick={handlePrint}
+          className="flex items-center gap-2 bg-primary-foreground text-primary px-3 py-1.5 rounded-md text-sm font-medium hover:opacity-90 transition-opacity shadow-sm print:hidden"
+        >
+          <Download className="h-4 w-4" />
+          PDF பதிவிறக்கம்
+        </button>
       </div>
-      <div className="max-h-[500px] overflow-y-auto">
+      <div className="max-h-[500px] overflow-y-auto print:max-h-none print:overflow-visible">
         {routePlan.map((day) => {
           const isExpanded = expandedDays.has(day.day);
           const isSelected = selectedDay === day.day;
@@ -79,7 +96,7 @@ const RoutePlanTable = ({ onDaySelect, selectedDay }: RoutePlanTableProps) => {
                         href={`https://www.google.com/maps?q=${stop.lat},${stop.lng}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-primary hover:text-primary/80"
+                        className="text-primary hover:text-primary/80 print:hidden"
                         onClick={(e) => e.stopPropagation()}
                       >
                         <ExternalLink className="h-3.5 w-3.5" />

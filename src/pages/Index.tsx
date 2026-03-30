@@ -27,7 +27,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="gradient-hero text-primary-foreground">
+      <header className="gradient-hero text-primary-foreground print:hidden">
         <div className="container mx-auto px-4 py-5">
           <div className="flex items-center gap-3">
             <div className="gradient-secondary p-2.5 rounded-lg">
@@ -42,7 +42,7 @@ const Index = () => {
       </header>
 
       {/* Tabs */}
-      <div className="border-b border-border bg-card sticky top-0 z-10">
+      <div className="border-b border-border bg-card sticky top-0 z-10 print:hidden">
         <div className="container mx-auto px-4">
           <div className="flex gap-1 -mb-px overflow-x-auto">
             {tabs.map((tab) => (
@@ -80,7 +80,7 @@ const Index = () => {
             <div className="lg:col-span-2">
               <RoutePlanTable onDaySelect={setSelectedDay} selectedDay={selectedDay} />
             </div>
-            <div className="lg:col-span-3">
+            <div className="lg:col-span-3 print:hidden">
               <div className="sticky top-16">
                 <div className="mb-3 flex items-center gap-2">
                   <span className="text-sm font-semibold text-foreground">
