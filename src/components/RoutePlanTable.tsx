@@ -21,7 +21,7 @@ const RoutePlanTable = ({ onDaySelect, selectedDay }: RoutePlanTableProps) => {
     <div className="bg-card rounded-lg shadow-card overflow-hidden border border-border">
       <div className="p-4 border-b border-border gradient-hero">
         <h3 className="text-lg font-bold text-primary-foreground">
-          📅 20 நாள் பயண திட்டம்
+          📅 4 நாள் பயண திட்டம்
         </h3>
         <p className="text-sm text-primary-foreground/70 mt-1">
           கிராமம் மீது கிளிக் செய்து வரைபடத்தில் பாருங்கள்
